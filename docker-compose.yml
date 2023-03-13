@@ -1,0 +1,40 @@
+# version: "3"
+# services:
+#   web:
+#     # usually do "build: ."
+#     #but need the 3 lines below for Dockerfile.dev instead of normal dockerfile
+#     build:
+#       context: . #still need the working directory as context
+#       dockerfile: Dockerfile.dev #look in the current working directory and find a file with that name and use it to build the image
+
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - /app/node_modules
+#       - .:/app
+#   #testing service for second way to do testing (reference Docker notes)
+#   tests:
+#     build:
+#       context: . 
+#       dockerfile: Dockerfile.dev
+#     volumes:
+#      - /app/node_modules
+#      - .:/app
+#     command: ["npm", "run", "test"]
+    
+# Before adding testing service
+version: "3"
+services:
+  web:
+    # usually do "build: ."
+    #but need the 3 lines below for Dockerfile.dev instead of normal dockerfile
+    build:
+      context: . #still need the working directory as context
+      dockerfile: Dockerfile.dev #look in the current working directory and find a file with that name and use it to build the image
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+
