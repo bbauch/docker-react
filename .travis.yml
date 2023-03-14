@@ -18,5 +18,6 @@ deploy:
  on:
   branch: master
 access_key_id: "$AWS_ACCESS_KEY"
-secret_key_id: "$AWS_SECRET_KEY"
-skip_cleanup: true
+secret_access_key:
+  secure: "$AWS_SECRET_KEY"
+edge: true
